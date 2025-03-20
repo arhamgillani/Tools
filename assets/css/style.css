@@ -13,6 +13,35 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
 }
+/* Style for dropdown summary (button) */
+details summary {
+    cursor: pointer;
+}
+
+/* Style for dropdown menu (ul) */
+details[open] .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background-color: #007bff;
+    color: white;
+}
 
 /* Header Styles */
 .site-header {
