@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             // Initialize Bootstrap components after loading
-            initializeBootstrapComponents();
+        
         });
 
     // Load Footer
