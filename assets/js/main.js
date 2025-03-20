@@ -95,7 +95,7 @@ function initializeBootstrapComponents() {
 // Initialize Categories
 function initializeCategories() {
     const categoriesContainer = document.getElementById('categories-container');
-    
+
     toolCategories.forEach(category => {
         const categoryElement = document.createElement('div');
         categoryElement.className = 'col-md-4 mb-4';
@@ -104,14 +104,22 @@ function initializeCategories() {
                 <i class="fas ${category.icon} category-icon"></i>
                 <h3>${category.name}</h3>
                 <p>${category.tools.length} tools</p>
-                <a href="./tools/${category.name.toLowerCase().replace(/\s+/g, '-')}" class="btn btn-primary">
-                    View Tools
-                </a>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="${category.name.toLowerCase().replace(/\s+/g, '-')}-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        View Tools
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="${category.name.toLowerCase().replace(/\s+/g, '-')}-dropdown">
+                        ${category.tools.map(tool => {
+                            return `<li><a class="dropdown-item" href="./tools/${category.name.toLowerCase().replace(/\s+/g, '-')}/${createSlug(tool)}.html">${tool}</a></li>`;
+                        }).join('')}
+                    </ul>
+                </div>
             </div>
         `;
         categoriesContainer.appendChild(categoryElement);
     });
 }
+
 
 // Search Functionality
 function initializeSearch() {
