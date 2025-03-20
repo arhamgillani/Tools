@@ -41,8 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('header-placeholder').innerHTML = data;
             // Initialize Bootstrap components after loading
             initializeBootstrapComponents();
-            // Update header links to use relative paths
-            updateHeaderLinks();
         });
 
     // Load Footer
